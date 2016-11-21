@@ -8,15 +8,6 @@ import java.util.logging.Logger;
 import java.awt.geom.*;
 
 public final class CurrentState extends State{
-    private Random random;
-    private Wizard self;
-    private World world;
-    private Game game;
-    private Move move;
-    private static final double RADIUS_DELTA = 10D;
-    private static final double TARGET_DELTA = 100D;
-    private static final Logger LOGGER = Logger.getLogger("MyStrategy");
-
 
     private void initializeStrategy(Wizard self, World world, Game game, Move move) {
         this.self = self;

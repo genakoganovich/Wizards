@@ -4,7 +4,6 @@ import java.util.*;
 
 public final class QuickStartState extends State {
     private static final double WAYPOINT_RADIUS = 100.0D;
-
     private static final double LOW_HP_FACTOR = 0.25D;
 
     /**
@@ -14,16 +13,8 @@ public final class QuickStartState extends State {
      * Если осталось мало жизненной энергии, отступаем к предыдущей точке.
      */
     private final Map<LaneType, Point2D[]> waypointsByLane = new EnumMap<>(LaneType.class);
-
-    private Random random;
-
     private LaneType lane;
     private Point2D[] waypoints;
-
-    private Wizard self;
-    private World world;
-    private Game game;
-    private Move move;
 
     /**
      * Основной метод стратегии, осуществляющий управление волшебником.
@@ -77,7 +68,6 @@ public final class QuickStartState extends State {
         // Если нет других действий, просто продвигаемся вперёд.
         goTo(getNextWaypoint());
     }
-
     /**
      * Инциализируем стратегию.
      * <p>
@@ -160,17 +150,6 @@ public final class QuickStartState extends State {
             )));*/
         }
     }
-
-    /**
-     * Сохраняем все входные данные в полях класса для упрощения доступа к ним.
-     */
-    private void initializeTick(Wizard self, World world, Game game, Move move) {
-        this.self = self;
-        this.world = world;
-        this.game = game;
-        this.move = move;
-    }
-
     /**
      * Данный метод предполагает, что все ключевые точки на линии упорядочены по уменьшению дистанции до последней
      * ключевой точки. Перебирая их по порядку, находим первую попавшуюся точку, которая находится ближе к последней
@@ -197,7 +176,6 @@ public final class QuickStartState extends State {
 
         return lastWaypoint;
     }
-
     /**
      * Действие данного метода абсолютно идентично действию метода {@code getNextWaypoint}, если перевернуть массив
      * {@code waypoints}.
@@ -219,7 +197,6 @@ public final class QuickStartState extends State {
 
         return firstWaypoint;
     }
-
     /**
      * Простейший способ перемещения волшебника.
      */
@@ -232,7 +209,6 @@ public final class QuickStartState extends State {
             move.setSpeed(game.getWizardForwardSpeed());
         }
     }
-
     /**
      * Находим ближайшую цель для атаки, независимо от её типа и других характеристик.
      */
@@ -260,7 +236,6 @@ public final class QuickStartState extends State {
 
         return nearestTarget;
     }
-
     /**
      * Вспомогательный класс для хранения позиций на карте.
      */
