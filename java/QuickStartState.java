@@ -1,10 +1,8 @@
-package quickstart;
-
 import model.*;
 
 import java.util.*;
 
-public final class QuickStartStrategy {
+public final class QuickStartState extends State {
     private static final double WAYPOINT_RADIUS = 100.0D;
 
     private static final double LOW_HP_FACTOR = 0.25D;
