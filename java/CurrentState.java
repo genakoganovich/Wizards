@@ -53,7 +53,8 @@ public final class CurrentState extends State{
     private boolean isNotFoe(Faction faction) {
         return faction == self.getFaction() || faction == Faction.NEUTRAL || faction == Faction.OTHER;
     }
-    private void goTo(double x, double y) {
+    @Override
+    public void goTo(double x, double y) {
         changeDirectionTo(x, y);
         ArrayList<CircularUnit> obstacles = getObstacles();
         if(!obstacles.isEmpty()) {
