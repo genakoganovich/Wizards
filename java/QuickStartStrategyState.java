@@ -2,7 +2,7 @@ import model.*;
 
 import java.util.*;
 
-public final class QuickStartState extends State {
+public final class QuickStartStrategyState extends StrategyState {
     private static final double WAYPOINT_RADIUS = 100.0D;
     private static final double LOW_HP_FACTOR = 0.25D;
 
@@ -256,15 +256,15 @@ public final class QuickStartState extends State {
             return y;
         }
 
-        public double getDistanceTo(double x, double y) {
+        double getDistanceTo(double x, double y) {
             return StrictMath.hypot(this.x - x, this.y - y);
         }
 
-        public double getDistanceTo(Point2D point) {
+        double getDistanceTo(Point2D point) {
             return getDistanceTo(point.x, point.y);
         }
 
-        public double getDistanceTo(Unit unit) {
+        double getDistanceTo(Unit unit) {
             return getDistanceTo(unit.getX(), unit.getY());
         }
     }

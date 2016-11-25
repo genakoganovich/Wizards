@@ -1,6 +1,6 @@
 import model.*;
 
-public final class DefaultState extends State{
+public final class DefaultStrategyState extends StrategyState {
 
     public void move(Wizard self, World world, Game game, Move move) {
         move.setSpeed(game.getWizardForwardSpeed());

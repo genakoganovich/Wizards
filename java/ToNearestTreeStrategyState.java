@@ -2,8 +2,8 @@ import model.*;
 import java.util.LinkedHashSet;
 
 
-class ToNearestTreeState extends State {
-    private  LinkedHashSet<Point> points = new LinkedHashSet<>();
+class ToNearestTreeStrategyState extends StrategyState {
+    private  LinkedHashSet<RoundPoint> roundPoints = new LinkedHashSet<>();
 
     public void move(Wizard self, World world, Game game, Move move) {
         super.move(self, world, game, move);
@@ -12,7 +12,7 @@ class ToNearestTreeState extends State {
         if(nearest != null) {
             if (isNear(nearest)) {
                 dance();
-                points.add(new Point(nearest.getX(), nearest.getY(), nearest.getRadius()));
+                roundPoints.add(new RoundPoint(nearest.getX(), nearest.getY(), nearest.getRadius()));
             } else if (isGotStuck()){
                 if(world.getTickIndex() % STUCK_TICKS == 0) {
                     turnRandomly();

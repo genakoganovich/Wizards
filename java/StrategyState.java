@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.logging.Logger;
 import static java.lang.StrictMath.PI;
 
-class State {
+class StrategyState {
     Random random;
     Wizard self;
     World world;

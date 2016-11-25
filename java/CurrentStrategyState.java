@@ -2,12 +2,10 @@ import model.*;
 import static java.lang.StrictMath.PI;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.logging.Logger;
 import java.awt.geom.*;
 
-public final class CurrentState extends State{
+public final class CurrentStrategyState extends StrategyState {
 
     private void initializeStrategy(Wizard self, World world, Game game, Move move) {
         this.self = self;
