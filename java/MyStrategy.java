@@ -1,9 +1,11 @@
 import model.*;
 
 public final class MyStrategy implements Strategy{
-
+    private static StrategyState strategyState;
     public void move(Wizard self, World world, Game game, Move move) {
-        StrategyState strategyState = new ToNearestTreeStrategyState();
+        if(strategyState == null) {
+            strategyState = new PatrolStrategyState(self, world, game);
+        }
         strategyState.move(self, world, game, move);
     }
 }

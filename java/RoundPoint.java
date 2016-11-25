@@ -3,7 +3,8 @@ class RoundPoint {
     double x;
     double y;
     private double radius;
-    private static final double DEFAULT_RADIUS = 40;
+    private static final double DEFAULT_RADIUS = 20;
+
     RoundPoint(double x, double y) {this(x, y, DEFAULT_RADIUS);}
     RoundPoint(double x, double y, double radius) {this.x = x; this.y = y; this.radius = radius;}
     @Override
